@@ -1,0 +1,84 @@
+{{#in_course_page}}
+    <nav class="list-group nomes-cursos">
+        {{#course}}
+            <h4>{{fullname}}</h4>
+            <i>{{shortname}}</i>
+        {{/course}}
+    </nav>
+    <nav class="list-group m-t-1 conteudo-cursos">
+    {{# course_content_actions }}
+        {{#action}}
+            <a class="list-group-item list-group-item-action {{#isactive}}font-weight-bold{{/isactive}}" href="{{{action}}}" data-key="{{key}}" data-isexpandable="{{isexpandable}}" data-indent="{{get_indent}}" data-showdivider="{{showdivider}}" data-type="{{type}}" data-nodetype="{{nodetype}}" data-collapse="{{collapse}}" data-forceopen="{{forceopen}}" data-isactive="{{isactive}}" data-hidden="{{hidden}}" data-preceedwithhr="{{preceedwithhr}}" {{#parent.key}}data-parent-key="{{.}}"{{/parent.key}}>
+                <div class="m-l-{{get_indent}}">
+                    {{#is_section}}
+                        <div class="media">
+                            <span class="media-left">{{#pix}}i/folder{{/pix}}</span>
+                            <span class="media-body">{{{text}}}</span>
+                        </div>
+                    {{/is_section}}
+                    {{^is_section}}
+                        {{{text}}}
+                    {{/is_section}}
+                </div>
+            </a>
+        {{/action}}
+        {{^action}}
+            <div class="list-group-item" data-key="{{key}}" data-isexpandable="{{isexpandable}}" data-indent="{{get_indent}}" data-showdivider="{{showdivider}}" data-type="{{type}}" data-nodetype="{{nodetype}}" data-collapse="{{collapse}}" data-forceopen="{{forceopen}}" data-isactive="{{isactive}}" data-hidden="{{hidden}}" data-preceedwithhr="{{preceedwithhr}}" {{#parent.key}}data-parent-key="{{.}}"{{/parent.key}}>
+                <div class="m-l-{{get_indent}}">
+                    {{#is_section}}
+                        {{#pix}}i/folder{{/pix}}
+                    {{/is_section}}
+                    {{{text}}}
+                </div>
+            </div>
+        {{/action}}
+    {{/course_content_actions }}
+    </nav>
+    <nav class="list-group m-t-1 conteudo-cursos">
+        {{# course_common_actions }}
+            <a class="list-group-item list-group-item-action" href="{{action_url}}">
+                <div class="m-l-1">
+                    <div class="media">
+                        <i class="icon fa fa-{{icon}} fa-fw navicon" aria-hidden="true" title="{{label}}" aria-label="{{label}}"></i>{{label}}
+                    </div>
+                </div>
+            </a>
+        {{/course_common_actions }}
+    </nav>
+{{/in_course_page}}
+
+{{^in_course_page}}
+    <nav class="list-group">
+        <!--a class="list-group-item list-group-item-action" href="{{link_mural}}" data-isactive="0" data-key='myhome'>
+            <div class="m-l-0">Mural</div>
+        </a-->
+
+        <a class="list-group-item list-group-item-action" href="{{link_sala_aula}}" data-isactive="1" data-key='salas'>
+            <div class="m-l-0">Salas de aula</div>
+        </a>
+
+        <!--a class="list-group-item list-group-item-action" href="{{link_secretaria}}" data-isactive="0" data-key='secretaria-sem-resposta'>
+            <div class="m-l-0">Secretaria</div>
+        </a-->
+    </nav>
+{{/in_course_page}}
+
+<nav class="list-group">
+    <a class="list-group-item list-group-item-action " href="{{link_calendar}}" data-key="calendar" data-type="60" data-isactive="0">
+        <div class="m-l-0">Calendário</div>
+    </a>
+    <div>
+        <dl class="aside-calendar item">
+            {{#nosso_calendario}}
+            <dt><a href="{{viewurl}}">{{shortdate_dia}}<br><span>{{shortdate_mes}}</span></a></dt>
+            <dd>
+                <ul>{{#events}}<li>{{name}}<br><br></li>{{/events}}</ul>
+            </dd>
+            <hr>
+            {{/nosso_calendario}}
+            {{^nosso_calendario}}
+                <p id="sem-eventos">Sem eventos</p>
+            {{/nosso_calendario}}
+        </dl>
+    </div>
+</nav>
