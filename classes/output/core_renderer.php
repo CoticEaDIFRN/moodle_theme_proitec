@@ -102,6 +102,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         //     return $output;
         // }
         $output .= $this->header_messsage();
+        $output .= $this->header_finalizarsessao();
         // $output .= $this->header_help();
         $output .= $this->header_notification();
         $output .= $this->header_admin();
@@ -471,9 +472,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $pagetitle = $PAGE->title;
 
         if($PAGE->pagelayout == 'frontpage' || $PAGE->pagelayout == 'mydashboard') {
-            $pagetitle = "Salas de aula";
+            $pagetitle = "Início";
         } elseif ($PAGE->pagelayout == 'course' || $PAGE->pagelayout == 'incourse') {
-            $pagetitle = "Sala de aula";
+            $pagetitle = "Início";
         } elseif ($PAGE->pagelayout == 'admin') {
             $pagetitle = "Administração";
         }
@@ -530,6 +531,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
             return $this->render_from_template('message_popup/message_popover', $context);
         }
         return '';
-    }      
+    }
+
+    protected function header_finalizarsessao() {
+        return "<a id='header_finalizar' href='".new moodle_url('/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1))."'>Finalizar Sessão</a>";
+    } 
     
 }

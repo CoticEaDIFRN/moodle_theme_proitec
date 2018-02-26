@@ -151,6 +151,14 @@ $header-message-popover-text: #CACACA;
     margin-right: -0.5rem;
 }
 
+#nav-notification-popover-container {
+    display: none;
+}
+
+#nav-message-popover-container {
+    display: none;
+}
+
 /* Padding nos ícones */ 
 .navbar-nav .nav-link {
     padding-top: .3rem;
@@ -173,16 +181,25 @@ $header-message-popover-text: #CACACA;
 
 /* Nome do usuário */
 .navbar-light .usertext {
-    font-size: 12px;
-    color: $header-icons;
-    line-height: 40px;
-    margin-left: 10px;
-    float: right;
+    // font-size: 12px;
+    // color: $header-icons;
+    // line-height: 40px;
+    // margin-left: 10px;
+    // float: right;
+    display: none;
 }
 
 /* Avatar modificado para a esquerda do nome de usuário */
 .navbar-light .avatars {
-    float: left;
+    // float: left;
+    display: none;
+}
+
+#header_finalizar {
+    float: right;
+    color: #F2F2F2;
+    font-size: 12px;
+    margin-top: 12px;
 }
 
 /* Setinha para baixo do lado do nome */
