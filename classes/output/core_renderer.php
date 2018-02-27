@@ -534,7 +534,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     protected function header_finalizarsessao() {
-        return "<a id='header_finalizar' href='".new moodle_url('/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1))."'>Finalizar Sessão</a>";
+        global $USER;
+
+        if (isloggedin()) {
+            return "<a id='header_finalizar' href='".new moodle_url('/login/logout.php', array('sesskey'=>sesskey(),'loginpage'=>1))."'>Finalizar Sessão</a>";
+        }
+        
     } 
     
 }
