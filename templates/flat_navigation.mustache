@@ -1,9 +1,9 @@
 {{#in_course_page}}
     <nav class="list-group nomes-cursos">
-        {{#course}}
-            <h4>{{fullname}}</h4>
-            <i>{{shortname}}</i>
-        {{/course}}
+        {{#user}}
+            <h4>{{firstname}} {{lastname}}</h4>
+            <i>{{username}}</i>
+        {{/user}}            
     </nav>
     <nav class="list-group m-t-1 conteudo-cursos">
     {{# course_content_actions }}

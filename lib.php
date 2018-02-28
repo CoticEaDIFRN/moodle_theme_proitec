@@ -170,7 +170,7 @@ function theme_boost_proitec_reset_app_cache() {
 
 function get_proitec_commom_moodle_template_context()
 {
-    global $OUTPUT, $PAGE, $COURSE, $SITE;
+    global $OUTPUT, $PAGE, $COURSE, $SITE, $USER;
 
     if (isloggedin()) {
         $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
@@ -188,6 +188,9 @@ function get_proitec_commom_moodle_template_context()
     $in_course_page = $PAGE->pagelayout == "course";
     $course_name = $COURSE->fullname;
     $course_code = $COURSE->shortname;
+    $user_username = $USER->username;
+    $user_firstname = $USER->firstname;
+    $user_lastname = $USER->lastname;
     return [
         'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
         'output' => $OUTPUT,
@@ -203,7 +206,11 @@ function get_proitec_commom_moodle_template_context()
         'link_secretaria' => (new moodle_url('/secretaria'))->out(),
         'in_course_page' => $in_course_page,
         'course' => $COURSE,
-        'course_name' => $course_name
+        'course_name' => $course_name,
+        'user' => $USER,
+        'user_username' => $user_username,
+        'user_fistname' => $user_firstname,
+        'user_lastname' => $user_lastname
     ];
 }
 
@@ -253,35 +260,35 @@ function get_proitec_course_common_actions()
     if ($PAGE->pagelayout == "course") {
         $extraflatnav = [];
         
-        // Notas
-        $notas = new stdClass();
-        $notas->action_url = new moodle_url("/grade/report/index.php", ['id'=>$COURSE->id]);
-        $notas->icon = "table";
-        $notas->label = "Notas";
-        $extraflatnav[] = $notas;
+        // // Notas
+        // $notas = new stdClass();
+        // $notas->action_url = new moodle_url("/grade/report/index.php", ['id'=>$COURSE->id]);
+        // $notas->icon = "table";
+        // $notas->label = "Notas";
+        // $extraflatnav[] = $notas;
     
-        // Emblemas
-        $emblemas = new stdClass();
-        $emblemas->action_url = new moodle_url("/badges/view.php", ['type'=>2, 'id'=>$COURSE->id]);
-        $emblemas->icon = "shield";
-        $emblemas->label = "Emblemas";
-        $extraflatnav[] = $emblemas;
+        // // Emblemas
+        // $emblemas = new stdClass();
+        // $emblemas->action_url = new moodle_url("/badges/view.php", ['type'=>2, 'id'=>$COURSE->id]);
+        // $emblemas->icon = "shield";
+        // $emblemas->label = "Emblemas";
+        // $extraflatnav[] = $emblemas;
     
-        // Competências
-        $competencias = new stdClass();
-        $competencias->action_url = new moodle_url("/admin/tool/lp/coursecompetencies.php", ['courseid'=>$COURSE->id]);
-        $competencias->icon = "check-square-o";
-        $competencias->label = "Competências";
-        $extraflatnav[] = $competencias;
+        // // Competências
+        // $competencias = new stdClass();
+        // $competencias->action_url = new moodle_url("/admin/tool/lp/coursecompetencies.php", ['courseid'=>$COURSE->id]);
+        // $competencias->icon = "check-square-o";
+        // $competencias->label = "Competências";
+        // $extraflatnav[] = $competencias;
 
-        // Participantes
-        $participantes = new stdClass();
-        $participantes->action_url = new moodle_url("/user/index.php", ['id'=>$COURSE->id]);
-        $participantes->icon = "users";
-        $participantes->label = "Participantes";
-        $extraflatnav[] = $participantes;
+        // // Participantes
+        // $participantes = new stdClass();
+        // $participantes->action_url = new moodle_url("/user/index.php", ['id'=>$COURSE->id]);
+        // $participantes->icon = "users";
+        // $participantes->label = "Participantes";
+        // $extraflatnav[] = $participantes;
     
-        return new ArrayIterator($extraflatnav);
+        // return new ArrayIterator($extraflatnav);
     }
 }
 
