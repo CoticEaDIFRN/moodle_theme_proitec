@@ -26,7 +26,7 @@
             <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
         </div>
 
-        <a href="https://ead.ifrn.edu.br/ava/proitec2018/course/view.php?id=2" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}">
+        <a href="{{{ config.wwwroot }}}/course/view.php?id=2" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}">
 
             <img class="site-name hidden-md-up" src="{{{ config.wwwroot }}}/theme/boost_proitec/pix/proitec-logo-small.png" style="height: 40px;" alt="Logo do IFRN campus EaD"/>
 
