@@ -260,35 +260,42 @@ function get_proitec_course_common_actions()
     if ($PAGE->pagelayout == "course") {
         $extraflatnav = [];
         
-        // // Notas
-        // $notas = new stdClass();
-        // $notas->action_url = new moodle_url("/grade/report/index.php", ['id'=>$COURSE->id]);
-        // $notas->icon = "table";
-        // $notas->label = "Notas";
-        // $extraflatnav[] = $notas;
-    
-        // // Emblemas
-        // $emblemas = new stdClass();
-        // $emblemas->action_url = new moodle_url("/badges/view.php", ['type'=>2, 'id'=>$COURSE->id]);
-        // $emblemas->icon = "shield";
-        // $emblemas->label = "Emblemas";
-        // $extraflatnav[] = $emblemas;
-    
-        // // Competências
-        // $competencias = new stdClass();
-        // $competencias->action_url = new moodle_url("/admin/tool/lp/coursecompetencies.php", ['courseid'=>$COURSE->id]);
-        // $competencias->icon = "check-square-o";
-        // $competencias->label = "Competências";
-        // $extraflatnav[] = $competencias;
+        // Simulado 1
+        $simulado1 = new stdClass();
+        $simulado1->action_url = new moodle_url("/mod/quiz/view.php?id=23");
+        $simulado1->icon = "check-square-o";
+        $simulado1->label = "Esporte";
+        $extraflatnav[] = $simulado1;
 
-        // // Participantes
-        // $participantes = new stdClass();
-        // $participantes->action_url = new moodle_url("/user/index.php", ['id'=>$COURSE->id]);
-        // $participantes->icon = "users";
-        // $participantes->label = "Participantes";
-        // $extraflatnav[] = $participantes;
+        // Simulado 2
+        $simulado2 = new stdClass();
+        $simulado2->action_url = new moodle_url("/mod/quiz/view.php?id=24");
+        $simulado2->icon = "check-square-o";
+        $simulado2->label = "Sustentabilidade";
+        $extraflatnav[] = $simulado2;
+
+        // Simulado 3
+        $simulado3 = new stdClass();
+        $simulado3->action_url = new moodle_url("/mod/quiz/view.php?id=26");
+        $simulado3->icon = "check-square-o";
+        $simulado3->label = "Cultura";
+        $extraflatnav[] = $simulado3;
+
+        // Simulado 4
+        $simulado4 = new stdClass();
+        $simulado4->action_url = new moodle_url("/mod/quiz/view.php?id=27");
+        $simulado4->icon = "check-square-o";
+        $simulado4->label = "Evolução";
+        $extraflatnav[] = $simulado4;
+
+        // Simulado 5
+        $simulado5 = new stdClass();
+        $simulado5->action_url = new moodle_url("/mod/quiz/view.php?id=25");
+        $simulado5->icon = "check-square-o";
+        $simulado5->label = "Tecnologia e Saúde";
+        $extraflatnav[] = $simulado5;
     
-        // return new ArrayIterator($extraflatnav);
+        return new ArrayIterator($extraflatnav);
     }
 }
 
