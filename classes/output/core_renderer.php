@@ -263,8 +263,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             }
         }
         // MODIFICATION END.
-        
-        return $html;
+        if (is_siteadmin()) {
+            return $html;
+        }
     }
 
 
