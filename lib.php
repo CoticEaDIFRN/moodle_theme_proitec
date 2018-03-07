@@ -186,6 +186,7 @@ function get_proitec_commom_moodle_template_context()
     $hasblocks = strpos($blockshtml, 'data-block=') !== false;
     $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
     $in_course_page = $PAGE->pagelayout == "course";
+    $within_course_page = $PAGE->pagelayout == "incourse";
     $course_name = $COURSE->fullname;
     $course_code = $COURSE->shortname;
     $user_username = $USER->username;
@@ -206,6 +207,8 @@ function get_proitec_commom_moodle_template_context()
         'link_secretaria' => (new moodle_url('/secretaria'))->out(),
         'in_course_page' => $in_course_page,
         'course' => $COURSE,
+        'within_course_page' => $within_course_page,
+        'incourse' => $COURSE,
         'course_name' => $course_name,
         'user' => $USER,
         'user_username' => $user_username,
@@ -243,7 +246,7 @@ function get_proitec_calendario() {
 function get_proitec_course_content_actions()
 {
     global $PAGE, $COURSE;
-    if ($PAGE->pagelayout == "course") {
+    if ($PAGE->pagelayout == "course" || $PAGE->pagelayout == "incourse") {
         $flatnav = [];
         foreach ($PAGE->flatnav as $child_key) {
             if ($child_key->type == 30) {
@@ -257,7 +260,7 @@ function get_proitec_course_content_actions()
 function get_proitec_course_common_actions() 
 {
     global $PAGE, $COURSE;
-    if ($PAGE->pagelayout == "course") {
+    if ($PAGE->pagelayout == "course" || $PAGE->pagelayout == "incourse") {
         $extraflatnav = [];
         
         // Simulado 1
@@ -307,7 +310,7 @@ function get_proitec_template_context()
 
     $templatecontext = get_proitec_commom_moodle_template_context();
 
-    if ($templatecontext['in_course_page']) {
+    if ($templatecontext['in_course_page'] || $templatecontext['within_course_page']) {
         $templatecontext['course_content_actions'] = get_proitec_course_content_actions();
         $templatecontext['course_common_actions'] = get_proitec_course_common_actions();
     }
