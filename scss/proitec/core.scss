@@ -2,7 +2,7 @@
 /*====================== Cores =====================*/
 /*==================================================*/
 
-// /* Header */ 
+// /* Header */
 // $header-background: #5BC166;
 // $header-searchbox: #71CC78;
 // $header-searchbox-text: #369530;
@@ -265,8 +265,44 @@ a:hover {
 /* Lista de contatos da área de mensagens */
 .messaging-area-container .messaging-area .contacts-area .contacts .contact {
     height: 80px;
-} 
+}
 
 .proitec-display-none {
     display: none;
+}
+.nav-pills .nav-item {
+    float: left;
+    list-style-type: none;
+    background-color: #f9f9f9;
+}
+.nav-pills .nav-link {
+    display: block;
+    width: 220px;
+    border-radius: .25rem;
+    display: block;
+    border-radius: .25rem;
+    font-size: 18px;
+    color: #748073;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 0.5em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    padding-left: 0em;
+}
+
+.nav-pills .nav-link.active, .nav-pills .nav-item.open .nav-link, .nav-pills .nav-link.active:focus, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link:hover{
+  color: #fff;
+  cursor: default;
+  width: 220px;
+  background: #f0f0f0;
+  border-bottom: 3px solid #5bc166;
+  color: #748073;
+
+}
+.tab-content>.active {
+    display: block;
+    background-color: #f9f9f9;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
