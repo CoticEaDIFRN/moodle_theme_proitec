@@ -292,16 +292,16 @@ a:hover {
 }
 
 .nav-pills .nav-link.active, .nav-pills .nav-item.open .nav-link, .nav-pills .nav-link.active:focus, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link:hover{
-  color: #fff;
-  cursor: default;
-  width: 220px;
-  background: #f0f0f0;
-  border-bottom: 3px solid #5bc166;
-  color: #748073;
+    color: #fff;
+    cursor: default;
+    width: 220px;
+    background: #f0f0f0;
+    border-bottom: 3px solid #5bc166;
+    color: #748073;
 
 }
-.tab-content>.active {
-    display: block;
+
+div#proitec-home,#proitec-menu1,#proitec-menu2{
     background-color: #f9f9f9;
     padding-top: 2em;
     padding-bottom: 2em;
