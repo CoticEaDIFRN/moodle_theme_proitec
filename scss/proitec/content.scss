@@ -75,6 +75,15 @@ $content-card-notvisited-icon: #CAD9CB;
     color: #1D1D1D;
 }
 
+.que .qtext {
+    color: black;
+    font-weight: bold;
+}
+
+.alert-info, #page-admin-index .releasenoteslink, #adminsettings .form-overridden, .que .formulation {
+    color: black;
+}
+
 .multichoice .info {
     background: #96AA96;
     border: none;
