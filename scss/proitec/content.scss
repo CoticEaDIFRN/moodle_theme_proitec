@@ -48,18 +48,39 @@ $content-card-notvisited-icon: #CAD9CB;
     margin: 0 0 0 0;
 }
 
+.que h3.no {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.que span.qno {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
 .qtext h3 {
     font-size: 16px;
-    background: #CAE0CA;
+    background: #96AA96;
     color: #1D1D1D;
     padding: 5px 20px;
 }
 
 .qtext p, span {
-    color: #95989A;
+    color: rgb(63, 64, 65);
 }
 
 .qtext b span {
     color: #1D1D1D;
+}
+
+.multichoice .info {
+    background: #96AA96;
+    border: none;
+}
+
+.multichoice .state, .multichoice .grade, .multichoice .questionflag {
+    display: none;
 }
 
