@@ -80,6 +80,14 @@ $content-card-notvisited-icon: #CAD9CB;
     font-weight: bold;
 }
 
+.que > .info {
+    display: none;
+}
+
+.multichoice .info {
+    display: inline-block;
+}
+
 .alert-info, #page-admin-index .releasenoteslink, #adminsettings .form-overridden, .que .formulation {
     color: black;
 }
@@ -93,7 +101,7 @@ $content-card-notvisited-icon: #CAD9CB;
     display: none;
 }
 
-.m-t-2, .m-b-1 {
+.m-t-2 {
     display: none;
 }
 
