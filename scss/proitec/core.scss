@@ -270,6 +270,7 @@ a:hover {
 .proitec-display-none {
     display: none;
 }
+/* Abas Home */
 .nav-pills .nav-item {
     float: left;
     list-style-type: none;
@@ -301,8 +302,56 @@ a:hover {
 
 }
 
-div#proitec-home,#proitec-menu1,#proitec-menu2{
+div#proitec-home,#proitec-menu1,#proitec-menu2, #proitec-menu3{
     background-color: #f9f9f9;
     padding-top: 2em;
     padding-bottom: 2em;
+}
+
+div.titulo-aula h5{
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 2.0;
+    color: #5bc166;
+}
+div.simulados h5{
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 2.0;
+    color: #5bc166;
+}
+div.apostilas h5{
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 2.0;
+    color: #5bc166;
+}
+
+/* Ícone Guia de Estudos */
+[data-key="icon-book"]:before {
+    font-family: FontAwesome;
+    content: "\F02D";
+    margin-right: 5px;
+}
+
+/* Ícone Apostilas */
+[data-key="icon-file-text"]:before {
+    font-family: FontAwesome;
+    content: "\F15C";
+    margin-right: 5px;
+}
+
+/* Ícone Video */
+[data-key="icon-play-sign"]:before {
+    font-family: FontAwesome;
+    content: "\F144";
+    margin-right: 5px;
+}
+
+
+/* Ícone Simulado */
+[data-key="icon-edit"]:before {
+    font-family: FontAwesome;
+    content: "\F044";
+    margin-right: 5px;
 }
