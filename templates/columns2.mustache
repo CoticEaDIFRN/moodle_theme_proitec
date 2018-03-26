@@ -76,4 +76,12 @@ require(['theme_boost/loader']);
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
+$( document ).ready(function() {
+   $('li[data-youtube]').click(function(elem) {
+     var me = elem.target;
+     $('#' + me.getAttribute("data-youtube-divname")).html("<iframe src='//www.youtube.com/embed/" + me.getAttribute("data-youtube") +  "' width='100%' frameborder='0' style='height: 24vw'></iframe>");
+     $("li[data-youtube-divname='" + me.getAttribute("data-youtube-divname") + "']").removeClass('active');
+     $(elem.target).addClass('active');
+   });
+});
 {{/js}}

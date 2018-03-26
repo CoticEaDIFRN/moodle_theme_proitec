@@ -32,107 +32,70 @@
 $verde-botao: #39B34A;{
     $content-card-link
 }
-
 $verde-claro: #5BC166;{
     $header-background
 }
-
 $verde-progresso: #CAD9CB;{
     $content-card-notvisited-icon
 }
-
 $preto-titulo: #274333;{
     $content-card-title
 }
-
 $corpo-de-texto: #4D4D4D;{
     $content-card-text
 }
-
 $amarelo: #EDD15D;{
     $content-card-visited-icon
 }
-
 $cinza: #95989A;{
     $content-card-arrow-icons
 }
-
 $verde-selecao: #2F8C47;{
     $menu-selected-item-font
 }
-
 $cinza-menu: #748073;{
     $menu-font-color
 }
-
 $verde-busca: #71CC78;{
     $header-searchbox
 }
-
 $busca-2: #369530;{
     $header-searchbox-text
 }
-
 $bg: #F2F2F2;{
     $menu-divisor-background
 }
-
 $bg2: #FFFFFF;{
     $header-icons
 }
-
 $online: #81FD6C;{
     $header-onlineuser-indicator
 }
-
 $caixa: #F9F9F9;
-
 $borda: #555555;
-
 $selecao: #F0F0F0;{
     $menu-item-hover
 }
-
 $barra: #E4F2E4;
-
 $barra2: #F9F1E5;
-
 $icones: #5B8E7D;
-
 $link: #2C9946;
-
 $bg-forum: #E2E2E2;
-
 $texto: #848484;
-
 $menu: #226628;
-
 $video: #EE6352;
-
 $documento: #08B2E3;
-
 $forum: #FC9F5B;
-
 $jogo: #525B76;
-
 $questionario: #7DCFB6;
-
 $erro: #F5A524;
-
 $vermelho: #C60C0F;
-
 $contraste: #39794F;
-
 $texto-chat: #CACACA;
-
 $data-chat: #9FB29E;
-
 $barra-chat: #235336;
-
 $balao: #CAD9CB;
-
 $escrever: #C9F5CF;
-
 $sub: #84988C;
 */
 
@@ -312,7 +275,7 @@ div.titulo-aula h5{
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 2.0;
-    color: #5bc166;
+    color: #748073;
 }
 div.simulados h5{
     font-size: 1.25rem;
@@ -327,6 +290,25 @@ div.apostilas h5{
     color: #5bc166;
 }
 
+div.principal{
+    display: table;
+    width: 100%;
+}
+
+div#video-matematica{
+    padding-left: 115px;
+}
+div.menu-aulas-matematica{
+    display: block;
+    width: 110px;
+    float: left;
+}
+li.btn-outline-success{
+    margin: 8px;
+}
+a.btn-video{
+    text-decoration: none
+}
 /* Ícone Guia de Estudos */
 [data-key="icon-book"]:before {
     font-family: FontAwesome;
@@ -347,7 +329,6 @@ div.apostilas h5{
     content: "\F144";
     margin-right: 5px;
 }
-
 
 /* Ícone Simulado */
 [data-key="icon-edit"]:before {
