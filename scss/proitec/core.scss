@@ -239,20 +239,23 @@ a:hover {
     list-style-type: none;
     background-color: #f9f9f9;
 }
-.nav-pills .nav-link {
-    display: block;
+.nav-pills .nav-link{
     width: 220px;
     border-radius: .25rem;
     display: block;
     border-radius: .25rem;
-    font-size: 18px;
     color: #748073;
+    font-size: 18px;
     font-weight: 700;
     text-align: center;
     padding-top: 0.5em;
     padding-right: 1em;
     padding-bottom: 0.5em;
     padding-left: 0em;
+}
+
+.nav-link span {
+    color: #748073;
 }
 
 .nav-pills .nav-link.active, .nav-pills .nav-item.open .nav-link, .nav-pills .nav-link.active:focus, .nav-pills .nav-item.open .nav-link:focus, .nav-pills .nav-link.active:hover, .nav-pills .nav-item.open .nav-link:hover{
@@ -335,4 +338,44 @@ a.btn-video{
     font-family: FontAwesome;
     content: "\F044";
     margin-right: 5px;
+}
+
+@media only screen and (max-width: 580px) {
+    .nav-link span {
+        display: none;
+    }
+    .nav-pills .nav-link{
+        font-size: 25px;
+        display: inline;
+        padding-top: 8px;
+    }
+
+    .nav-pills .nav-link.active:hover{
+        color: #5bc166;
+        border-bottom: none;
+    }
+
+    /* Ícone Guia de Estudos */
+    [data-key="icon-book"]:before {
+        margin-left: 25px;
+        margin-right: 0px;
+    }
+
+    /* Ícone Apostilas */
+    [data-key="icon-file-text"]:before {
+        margin-left: 25px;
+        margin-right: 0px;
+    }
+
+    /* Ícone Video */
+    [data-key="icon-play-sign"]:before {
+        margin-left: 25px;
+        margin-right: 0px;
+    }
+
+    /* Ícone Simulado */
+    [data-key="icon-edit"]:before {
+        margin-left: 25px;
+        margin-right: 0px;
+    }
 }
