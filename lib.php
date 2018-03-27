@@ -297,6 +297,13 @@ function get_proitec_course_common_actions()
         $simulado5->icon = "check-square-o";
         $simulado5->label = "Tecnologia e Saúde";
         $extraflatnav[] = $simulado5;
+
+        // Participantes
+        $participantes = new stdClass();
+        $participantes->action_url = new moodle_url("/user/index.php", ['id'=>$COURSE->id]);
+        $participantes->icon = "users";
+        $participantes->label = "Participantes";
+        $extraflatnav[] = $participantes;
     
         return new ArrayIterator($extraflatnav);
     }
