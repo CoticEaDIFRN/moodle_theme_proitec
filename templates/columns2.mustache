@@ -83,5 +83,13 @@ $( document ).ready(function() {
      $("li[data-youtube-divname='" + me.getAttribute("data-youtube-divname") + "']").removeClass('active');
      $(elem.target).addClass('active');
    });
+
+   function questElements() {
+        var firstDivContent = document.getElementById('mod_quiz_navblock');
+        var secondDivContent = document.getElementById('questElements');
+        secondDivContent.innerHTML = firstDivContent.innerHTML;
+   }
+
+   questElements();
 });
 {{/js}}
