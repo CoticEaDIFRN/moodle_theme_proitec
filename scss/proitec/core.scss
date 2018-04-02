@@ -312,6 +312,10 @@ li.btn-outline-success{
 a.btn-video{
     text-decoration: none
 }
+
+li#section-5{
+  display: none;
+}
 /* Ícone Guia de Estudos */
 [data-key="icon-book"]:before {
     font-family: FontAwesome;
