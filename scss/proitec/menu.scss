@@ -162,6 +162,18 @@ $menu-borders: #CAD9CB;
     padding: .05rem 1.25rem;
 }
 
+#mod_quiz_navblock_title {
+    display: none;
+}
+
+#questElements .endtestlink {
+    display: none;
+}
+
+#questElements button {
+    display: none;
+}
+
 @media only screen and (min-width: 768px) {
     #nav-drawer.closed {
 	left: 0px;

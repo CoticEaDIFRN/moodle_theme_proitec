@@ -260,7 +260,7 @@ function get_proitec_course_content_actions()
 function get_proitec_course_common_actions() 
 {
     global $PAGE, $COURSE;
-    if ($PAGE->pagelayout == "course" || $PAGE->pagelayout == "incourse") {
+    if ($PAGE->pagelayout == "course" || $PAGE->pagelayout == "incourse" && $PAGE->bodyid != "page-mod-quiz-attempt") {
         $extraflatnav = [];
         
         // Simulado 1
