@@ -91,5 +91,22 @@ $( document ).ready(function() {
    }
 
    questElements();
+
+
+    if ($('#questElements').length) { 
+        $('#questElements > div > h3').after('<h4 id="textos_title">Textos</h4><div id="textos_links" style="display: flex"></div>');
+        $('#questElements .qnbutton:contains(Informação)').appendTo('#textos_links');
+        $('#textos_links').after('<h4 id="perguntas_title">Perguntas</h4>');
+
+        $('.aside-calendar').parent().parent().hide() 
+
+
+        $('#responseform input').change(function (evt){ 
+            var paizao = $(evt.target).parent().parent().parent().parent().parent().parent();
+            $('[href="#' + paizao.attr('id') +'"]').removeClass('notyetanswered').addClass('answersaved');
+        });
+
+    }
+
 });
 {{/js}}
