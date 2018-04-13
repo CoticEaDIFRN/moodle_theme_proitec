@@ -1,0 +1,116 @@
+/*==================================================*/
+/*====================== Cores =====================*/
+/*==================================================*/
+
+// /* Content */
+$content-background: $menu-divisor-background;
+$content-title: #000000;
+$content-card-background: $header-icons;
+$content-card-title: #274333;
+$content-card-text: #4D4D4D;
+$content-card-link: #39B34A;
+$content-card-arrow-icons: #95989A;
+$content-card-completed-icon: $content-card-link;
+$content-card-visited-icon: #EDD15D;
+$content-card-notvisited-icon: #CAD9CB;
+
+// /*==================================================*/
+// /*================ Página principal ================*/
+// /*==================================================*/
+
+/* Altura da margem do topo */
+#page {
+    margin-top: 130px;
+}
+
+[data-region="blocks-column"] {
+    display: none;
+}
+
+#region-main-settings-menu.has-blocks, #region-main.has-blocks {
+    width: 100%;
+}
+
+// Questionários
+
+.alert-info, #page-admin-index .releasenoteslink, #adminsettings .form-overridden, .que .formulation {
+    background-color: #fff;
+    border-color: #fff;
+    color: #31708f;
+}
+
+.que .info {
+    float: none;
+    width: 100%;
+}
+
+.que .content {
+    margin: 0 0 0 0;
+}
+
+.que h3.no {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.que span.qno {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.qtext h3 {
+    font-size: 16px;
+    background: #96AA96;
+    color: #1D1D1D;
+    padding: 5px 20px;
+}
+
+.qtext p, span {
+    color: rgb(63, 64, 65);
+}
+
+.qtext b span {
+    color: #1D1D1D;
+}
+
+.que .qtext {
+    color: black;
+    font-weight: bold;
+}
+
+.que > .info {
+    display: none;
+}
+
+.multichoice .info {
+    display: inline-block;
+}
+
+.alert-info, #page-admin-index .releasenoteslink, #adminsettings .form-overridden, .que .formulation {
+    color: black;
+}
+
+.multichoice .info {
+    background: #96AA96;
+    border: none;
+}
+
+.multichoice .state, .multichoice .grade, .multichoice .questionflag {
+    display: none;
+}
+
+.m-t-2 {
+    display: none;
+}
+
+#page-mod-quiz-attempt {
+    background: #304A3A;
+}
+
+        
+.qn_buttons > .answersaved {
+   background: #39b34a !important;
+   color: #fff;
+}

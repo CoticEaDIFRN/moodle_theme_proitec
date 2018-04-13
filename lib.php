@@ -36,7 +36,7 @@ function theme_boost_proitec_get_main_scss_content($theme) {
     $scss = '';
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : null;
     $fs = get_file_storage();
-    
+
     $context = context_system::instance();
     if ($filename == 'plain.scss') {
         // We still load the default preset files directly from the boost theme. No sense in duplicating them.
@@ -44,6 +44,10 @@ function theme_boost_proitec_get_main_scss_content($theme) {
     } else if ($filename == 'proitec.scss') {
         // We still load the default preset files directly from the boost theme. No sense in duplicating them.
         $scss .= file_get_contents($CFG->dirroot . '/theme/boost_proitec/scss/preset/proitec.scss');
+
+    }else if ($filename == 'presencial.scss') {
+        // We still load the default preset files directly from the boost theme. No sense in duplicating them.
+        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_proitec/scss/preset/presencial.scss');
 
     } else if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_boost_proitec', 'preset', 0, '/', $filename))) {
         // This preset file was fetched from the file area for theme_boost_proitec and not theme_boost (see the line above).
@@ -256,13 +260,14 @@ function get_proitec_course_content_actions()
         return new ArrayIterator($flatnav);
     }
 }
-    
-function get_proitec_course_common_actions() 
+
+//Menu Lateral Proitec
+function get_proitec_course_common_actions()
 {
     global $PAGE, $COURSE;
     if ($PAGE->pagelayout == "course" || $PAGE->pagelayout == "incourse" && $PAGE->bodyid != "page-mod-quiz-attempt") {
         $extraflatnav = [];
-        
+
         // Simulado 1
         $simulado1 = new stdClass();
         $simulado1->action_url = new moodle_url("/mod/quiz/view.php?id=23");
@@ -304,7 +309,60 @@ function get_proitec_course_common_actions()
         $participantes->icon = "users";
         $participantes->label = "Participantes";
         $extraflatnav[] = $participantes;
-    
+
+        return new ArrayIterator($extraflatnav);
+    }
+}
+
+//Menu Lateral Proitec-Presencial
+function get_presencial_proitec_course_common_actions()
+{
+    global $PAGE, $COURSE;
+    if ($PAGE->pagelayout == "course" || $PAGE->pagelayout == "incourse" && $PAGE->bodyid != "page-mod-quiz-attempt") {
+        $extraflatnav = [];
+
+        // Simulado 1
+        $simulado1 = new stdClass();
+        $simulado1->action_url = new moodle_url("/mod/quiz/view.php?id=6875");
+        $simulado1->icon = "check-square-o";
+        $simulado1->label = "Esporte";
+        $extraflatnav[] = $simulado1;
+
+        // Simulado 2
+        $simulado2 = new stdClass();
+        $simulado2->action_url = new moodle_url("/mod/quiz/view.php?id=6876");
+        $simulado2->icon = "check-square-o";
+        $simulado2->label = "Sustentabilidade";
+        $extraflatnav[] = $simulado2;
+
+        // Simulado 3
+        $simulado3 = new stdClass();
+        $simulado3->action_url = new moodle_url("/mod/quiz/view.php?id=6877");
+        $simulado3->icon = "check-square-o";
+        $simulado3->label = "Cultura";
+        $extraflatnav[] = $simulado3;
+
+        // Simulado 4
+        $simulado4 = new stdClass();
+        $simulado4->action_url = new moodle_url("/mod/quiz/view.php?id=6878");
+        $simulado4->icon = "check-square-o";
+        $simulado4->label = "Evolução";
+        $extraflatnav[] = $simulado4;
+
+        // Simulado 5
+        $simulado5 = new stdClass();
+        $simulado5->action_url = new moodle_url("/mod/quiz/view.php?id=6879");
+        $simulado5->icon = "check-square-o";
+        $simulado5->label = "Tecnologia e Saúde";
+        $extraflatnav[] = $simulado5;
+
+        // Participantes
+        $participantes = new stdClass();
+        $participantes->action_url = new moodle_url("/user/index.php", ['id'=>$COURSE->id]);
+        $participantes->icon = "users";
+        $participantes->label = "Participantes";
+        $extraflatnav[] = $participantes;
+
         return new ArrayIterator($extraflatnav);
     }
 }
@@ -320,6 +378,7 @@ function get_proitec_template_context()
     if ($templatecontext['in_course_page'] || $templatecontext['within_course_page']) {
         $templatecontext['course_content_actions'] = get_proitec_course_content_actions();
         $templatecontext['course_common_actions'] = get_proitec_course_common_actions();
+        $templatecontext['course_presencial_common_actions'] = get_presencial_proitec_course_common_actions();
     }
     $templatecontext['nosso_calendario'] = get_proitec_calendario();
     return $templatecontext;

@@ -14,16 +14,17 @@ $menu-borders: #CAD9CB;
 // /*====================== Menu ======================*/
 // /*==================================================*/
 
-/* Menu Proitec Presencial*/
-.proitec_presencial{
+/* Menu Proitec */
+.proitec_ifrn{
     display: none;
 }
-li#nav-item-presencial{
+li#nav-item-proitec{
     display: none;
 }
-#proitec-presencial-menu3{
+#proitec-menu3{
     display: none;
 }
+
 /* Menu background */
 [data-region="drawer"] {
     padding: 20px 0;
