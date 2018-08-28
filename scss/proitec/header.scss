@@ -54,17 +54,26 @@ $header-message-popover-text: #CACACA;
 
 /* Tipo da página */ 
 #navbar_pagetitle {
-    font-size: 24px;
-    color: $header-icons;
-    text-align: left;
-    line-height: 1.6;
-    margin-left: 270px;
+    // font-size: 24px;
+    // color: $header-icons;
+    // text-align: left;
+    // line-height: 1.6;
+    // margin-left: 270px;
+    display: none;
 }
 
 /* Escolha do idioma */
 .navbar-nav .nav-item {
-    display: none;
+    display: block;
 } 
+
+.dropdown .nav-item {
+    display: none !important;
+}
+
+.dropdown-toggle .nav-link {
+    display: none !important;
+}
 
 // /* Dropdown de escolha do idioma */
 // .navbar-light .dropdown-menu {
